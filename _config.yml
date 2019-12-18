@@ -1,4 +1,5 @@
 # Site Settings
+remote_theme: naye0ng/Grape-Theme
 baseurl: ""
 url : "https://jsyang-dev.github.io"
 
