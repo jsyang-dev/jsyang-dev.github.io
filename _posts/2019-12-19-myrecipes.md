@@ -40,7 +40,7 @@ comments : True
 *  myrecipes-api: 레시피, 회원 관련 API를 제공하는 프로젝트
 *  system-api: 로그 관련 API를 제공하는 프로젝트
 *  myrecipes-batch: 배지 작업을 위한 프로젝트
-*  myrecipes-admin: 어드민 페이지 제공을 이한 프로젝트(향후 개발 예정)
+*  myrecipes-admin: 어드민 페이지 제공을 위한 프로젝트(향후 개발 예정)
 
 <br>
 
@@ -83,6 +83,6 @@ comments : True
 * Docker: 프로젝트를 컨테이너로 배포
 * SonarCloud: 프로젝트 분석과 커버리지 결과를 제공, 잠재적인 보안 위협이나 기술 부채를 제거
 * Slack: Jenkins에서 이벤트 발생 시 알람
-* AWS(EC2, S3): 배포 인프라, 정적 리소스 저장을 우한 용도
+* AWS(EC2, S3): 배포 인프라, 정적 리소스 저장을 위한 용도
 
 <br>
