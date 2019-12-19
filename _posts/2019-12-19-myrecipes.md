@@ -8,7 +8,6 @@ comments : True
 ---
 
 ## 프로젝트 소개
-------------
 
 ![screenshot](/assets/project/front-screenshot.jpg)
 
@@ -52,7 +51,6 @@ comments : True
 <br>
 
 ## 사용기술
-------------
 
 ### 데이터베이스
 
