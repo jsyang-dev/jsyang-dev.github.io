@@ -8,7 +8,7 @@ comments : True
 ---
 
 ## 프로젝트 소개
-<hr>
+
 ![screenshot](/assets/project/front-screenshot.jpg)
 
 <br>
