@@ -40,7 +40,7 @@ comments : True
 *  myrecipes-front: 프런트 페이지 제공을 위한 프로젝트
 *  myrecipes-api: 레시피, 회원 관련 API를 제공하는 프로젝트
 *  system-api: 로그 관련 API를 제공하는 프로젝트
-*  myrecipes-batch: 배지 작업을 제공하는 프로젝트
+*  myrecipes-batch: 배지 작업을 위한 프로젝트
 *  myrecipes-admin: 어드민 페이지 제공을 이한 프로젝트(향후 개발 예정)
 
 <br>
