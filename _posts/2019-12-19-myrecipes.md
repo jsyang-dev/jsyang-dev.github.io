@@ -59,7 +59,7 @@ comments : True
 
 <br>
 
-### Spring 라이브러리
+### Spring 모듈
 
 * Spring Thymeleaf: 프런트 웹페이지 구성을 위한 템플릿 엔진
 * Spring Security: 인증과 인가, CSRF 방지와 같은 보안 적용
