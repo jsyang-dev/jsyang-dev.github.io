@@ -5,7 +5,7 @@ url : "https://jsyang-dev.github.io"
 
 # Blog Settings
 theme_settings :
-  title : 평범한 개발자의 Dev Story
+  title : Jeongsu's Dev Story
   favicon : assets/favicon.ico
 
   # Profile Settings
@@ -14,12 +14,12 @@ theme_settings :
     username : Jeongsu Yang
     description : JAVA Back-End Developer, AWS Cloud Architect
     experience :
-      - start : 2017-05-03
-        end : 2018-05-06
-        experience : company name, title
+      - start : 2018.12
+        end : 현재
+        experience : 롯데정보통신, 플랫폼 개발자
     skills : 
       - skill : HTML5 & CSS
-        value : 85  # Percent value
+        value : 90  # Percent value
         
   # Icons
   icons :

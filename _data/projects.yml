@@ -1,38 +1,28 @@
 - project :
-    print : False # If 'False' is selected, it will not be displayed in 'home.html > aside > .proj-content'. 
+    print : Ture # If 'False' is selected, it will not be displayed in 'home.html > aside > .proj-content'. 
     modal : True # If 'True' is selected, modal can open in 'portfolio.html'. 
-    url : https://github.com/naye0ng/Grape-Theme # Full URL
-    image : "portfolio.png" # path: assets/project/
-    date : 2019.06.09 - Developing
-    title : Grape-Theme
-    summary : A awesome jekyll theme!
-    description : This project is my first jekyll theme. and everyone can customize this easily.  
-    contents :
-        - title : 1. 블로그 첫 화면 구성
-          image : home.png
-          description : <li>Responsive Layout</li>
-            <li>User Profile</li> 
-            <li>Tags</li> 
-            <li>Projects</li> 
-            <li>Pagination</li>
-        - title : 2. 태그 페이지
-          image : tags.png
-          description : <li>Responsive Layout</li> 
-            <li>Tags</li> 
-        - title : 3. 남은 개발 과제
-          image :
-          description : <li>project 부분 디자인 변경</li>
-            <li>favicon.ico, search 기능</li>
-            <li>OG Tag 추가</li>
-            <li>profile 이미지 효과</li>
-            <li>gem 배포</li> 
-
-- project :
-    print : False # If 'False' is selected, it will not be displayed in 'home.html > aside > .proj-content'. 
-    modal : True # If 'True' is selected, modal can open in 'portfolio.html'. 
-    url :  # Full URL
-    image : # path: assets/project/
-    date : 2019.06.09 - Developing
-    title : Dummy project
-    summary : This is Dummy
-    description :  
+    url : https://github.com/users/jsyang-dev/projects/1 # Full URL
+    image : "front-screenshot.jpg" # path: assets/project/
+    date : 2019.09 ~ 개발중
+    title : MY.레시피
+    summary : 레시피를 등록하여 공유할 수 있는 사이트
+    description : 본 프로젝트는 개발하면서 새로운 기술들을 공부하고 적용하고자 사이드 프로제트로 진행하고 있습니다. 일과 육아와 공부를 병행하기 위해서 매일 저녁에 적어도 1시간 이상 코딩을 하고 있습니다.
+    # contents :
+    #     - title : 1. 블로그 첫 화면 구성
+    #       image : home.png
+    #       description : <li>Responsive Layout</li>
+    #         <li>User Profile</li> 
+    #         <li>Tags</li> 
+    #         <li>Projects</li> 
+    #         <li>Pagination</li>
+    #     - title : 2. 태그 페이지
+    #       image : tags.png
+    #       description : <li>Responsive Layout</li> 
+    #         <li>Tags</li> 
+    #     - title : 3. 남은 개발 과제
+    #       image :
+    #       description : <li>project 부분 디자인 변경</li>
+    #         <li>favicon.ico, search 기능</li>
+    #         <li>OG Tag 추가</li>
+    #         <li>profile 이미지 효과</li>
+    #         <li>gem 배포</li> 
