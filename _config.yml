@@ -16,10 +16,40 @@ theme_settings :
     experience :
       - start : 2018.12
         end : 현재
-        experience : 롯데정보통신, 플랫폼 개발자
+        experience : 플랫폼 개발자/AWS 클라우드 아키텍트, New엘롯데 AWS 클라우드 운영
+      - start : 2017.05
+        end : 2018.11
+        experience : 플랫폼 개발자, 롯데 유통사 백오피스 통합 및 New엘롯데 구축 프로젝트
+      - start : 2015.10
+        end : 2017.04
+        experience : Java Web 개발자, 파스퇴르몰(e-Commerce) 운영
+      - start : 2015.03
+        end : 2015.09
+        experience : Java Web 개발자, 롯데푸드 파스퇴르 모바일 구축
+      - start : 2014.04
+        end : 2015.02
+        experience : ABAP 개발자, 롯데푸드 SAP ERP 시스템 운영
+      - start : 2013.04
+        end : 2014.03
+        experience : ABAP 개발자, 롯데푸드 통합시스템(SAP) 구축
+      - start : 2008.02
+        end : 2013.03
+        experience : ERP 개발자, 롯데삼강 영업/물류 ERP 시스템 운영
     skills : 
-      - skill : HTML5 & CSS
-        value : 90  # Percent value
+      - skill : Java
+        value : 70  # Percent value
+      - skill : Spring/Spring Boot
+        value : 60  # Percent value
+      - skill : Node.js
+        value : 60  # Percent value
+      - skill : Javascript
+        value : 75  # Percent value
+      - skill : MySQL
+        value : 75  # Percent value
+      - skill : MS-SQL
+        value : 80  # Percent value
+      - skill : AWS
+        value : 70  # Percent value
         
   # Icons
   icons :
