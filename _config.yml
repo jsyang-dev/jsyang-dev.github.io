@@ -65,7 +65,7 @@ theme_settings :
     instagram:
 
   # Disqus
-  disqus_shortname :
+  disqus_shortname : mycat83
 
 # Pagination
 paginate: 5
