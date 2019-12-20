@@ -2,7 +2,7 @@
 layout: post
 title: MY.레시피 프로젝트 소개
 subtitle : 프로젝트 소개 및 내용
-tags: [Project, Java, Spring Boot, Study]
+tags: [Project, Java, SpringBoot, Study]
 author: Jeongsu Yang
 comments : True
 ---
