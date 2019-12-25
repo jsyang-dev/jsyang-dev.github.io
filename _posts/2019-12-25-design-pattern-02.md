@@ -1,7 +1,7 @@
 ---
-title: 디자인 패턴 01
+title: 디자인 패턴 02
 layout: post
-subtitle: 스트래티지 패턴
+subtitle: 어댑터 패턴
 tags:
 - Java
 - DesignPattern
@@ -10,7 +10,7 @@ author: Jeongsu Yang
 comments: 'True'
 ---
 
-## 스트레티지 패턴
+## 어댑터 패턴
 
 ### 정의
 
@@ -19,55 +19,63 @@ comments: 'True'
 
 ### 역할별 수행 작업
 
-![Strategy](/assets/designpattern/post/Strategy.png)
+![Adapter](/assets/designpattern/post/Adapter.png)
 
-* Strategy
-  * 인터페이스나 추상 클래스로 외부에서 동일한 방식으로 알고리즘을 호출하는 방법을 명시
-* ConcreteStrategy
-  * 스트래티지 패턴에서 명시한 알고리즘을 실제로 구현한 클래스
-* Context
-  * 스트래티지 패턴을 이용하는 역할을 수행한다.
-  * 필요에 따라 동적으로 구체적인 전략을 바꿀 수 있도록 setter 메서드(‘집약 관계’)를 제공한다.
+* Adapter
+* ConcreteAdapter
+* Adaptee
 
 ### 예제
 
-![Strategy](/assets/designpattern/post/StrategyExample.png)
+![AdapterExample](/assets/designpattern/post/AdapterExample.png)
 
 ```java
-public class Character {
-    private Weapon weapon;
-
-    public void setWeapon(Weapon weapon) {
-        this.weapon = weapon;
-    }
-
-    public void attack() {
-        this.weapon.doAttack();
-    }
+public interface SocketAdapter {
+    public Voltage get120Volt();
+    public Voltage get200Volt();
+    public Voltage get220Volt();
 }
 
-public interface Weapon {
-    void doAttack();
-}
+public class SocketAdapterImpl implements SocketAdapter {
+    private Socket socket = new Socket();
 
-public class Sword implements Weapon {
     @Override
-    public void doAttack() {
-        System.out.println("검 공격");
+    public Voltage get120Volt() {
+        Voltage voltage = socket.getVoltage();
+        return convertVoltage(voltage, 100);
+    }
+
+    @Override
+    public Voltage get200Volt() {
+        Voltage voltage = socket.getVoltage();
+        return convertVoltage(voltage, 20);
+    }
+
+    @Override
+    public Voltage get220Volt() {
+        return socket.getVoltage();
+    }
+
+    private Voltage convertVoltage(Voltage voltage, int convertValue) {
+        return new Voltage(voltage.getValue() - convertValue);
     }
 }
 
-public class Bow implements Weapon {
-    @Override
-    public void doAttack() {
-        System.out.println("활 공격");
-    }
-}
+public class Voltage {
+    private int value;
 
-public class Ax implements Weapon {
-    @Override
-    public void doAttack() {
-        System.out.println("도끼 공격");
+    public Voltage(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
     }
 }
 ```
+
+[GitHub](https://github.com/jsyang-dev/study-designpattern.git) 소스 참고
