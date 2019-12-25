@@ -19,7 +19,7 @@ comments: 'True'
 
 ### 역할별 수행 작업
 
-![Strategy](/assets/designpattern/post/Strategy.png)
+![Strategy](/assets/post/designpattern/Strategy.png)
 
 * Strategy
   * 인터페이스나 추상 클래스로 외부에서 동일한 방식으로 알고리즘을 호출하는 방법을 명시
@@ -31,7 +31,7 @@ comments: 'True'
 
 ### 예제
 
-![Strategy](/assets/designpattern/post/StrategyExample.png)
+![StrategyExample](/assets/post/designpattern/StrategyExample.png)
 
 ```java
 public class Character {
