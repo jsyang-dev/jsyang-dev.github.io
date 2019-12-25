@@ -19,7 +19,7 @@ comments: 'True'
 
 ### 역할별 수행 작업
 
-![Adapter](/assets/designpattern/post/Adapter.png)
+![Adapter](/assets/post/designpattern/Adapter.png)
 
 * Adapter
 * ConcreteAdapter
@@ -27,7 +27,7 @@ comments: 'True'
 
 ### 예제
 
-![AdapterExample](/assets/designpattern/post/AdapterExample.png)
+![AdapterExample](/assets/post/designpattern/AdapterExample.png)
 
 ```java
 public interface SocketAdapter {
