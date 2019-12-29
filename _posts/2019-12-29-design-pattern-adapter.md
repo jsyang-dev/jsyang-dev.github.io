@@ -89,6 +89,8 @@ public class Main {
 }
 ```
 
+[GitHub](https://github.com/jsyang-dev/study-designpattern/tree/master/src/me/study/pattern/adapter/sample1) 소스 참고
+
 #### 인스턴스에 의한 Adapter 패턴
 
 ![AdapterExample2](/assets/post/designpattern/AdapterExample2.png)
@@ -134,4 +136,4 @@ public class Main {
 }
 ```
 
-[GitHub](https://github.com/jsyang-dev/study-designpattern.git) 소스 참고
+[GitHub](https://github.com/jsyang-dev/study-designpattern/tree/master/src/me/study/pattern/adapter/sample2) 소스 참고
