@@ -80,4 +80,4 @@ public class IDCard extends Product {
 }
 ```
 
-[GitHub](https://github.com/jsyang-dev/study-designpattern/tree/master/src/me/study/pattern/factorymethod/example1) 소스 참고
+[GitHub](https://github.com/jsyang-dev/study-designpattern/tree/master/src/me/study/pattern/factorymethod/example) 소스 참고

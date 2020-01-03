@@ -127,4 +127,4 @@ public class Main {
 }
 ```
 
-[GitHub](https://github.com/jsyang-dev/study-designpattern/tree/master/src/me/study/pattern/iterator/example1) 소스 참고
+[GitHub](https://github.com/jsyang-dev/study-designpattern/tree/master/src/me/study/pattern/iterator/example) 소스 참고

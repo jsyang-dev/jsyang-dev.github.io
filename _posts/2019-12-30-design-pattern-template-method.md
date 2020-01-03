@@ -101,4 +101,4 @@ public class Main {
 }
 ```
 
-[GitHub](https://github.com/jsyang-dev/study-designpattern/tree/master/src/me/study/pattern/templatemethod/example1) 소스 참고
+[GitHub](https://github.com/jsyang-dev/study-designpattern/tree/master/src/me/study/pattern/templatemethod/example) 소스 참고
