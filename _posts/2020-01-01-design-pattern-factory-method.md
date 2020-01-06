@@ -53,14 +53,14 @@ public abstract class Product {
 }
 
 public class IDCardFactory extends Factory {
-    private Vector owners = new Vector();
+    private ArrayList<String> owners = new ArrayList<>();
     protected Product createProduct(String owner) {
         return new IDCard(owner);
     }
     protected void registerProduct(Product product) {
         owners.add(((IDCard)product).getOwner());
     }
-    public Vector getOwners() {
+    public ArrayList<String> getOwners() {
         return owners;
     }
 }
