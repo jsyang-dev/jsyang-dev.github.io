@@ -34,6 +34,8 @@ comments: 'True'
   - **예외처리가 불편하다.**
     - 프로그래머 검사가 필요한 예외가 등장한다면 무조건 프로그래머가 선언을 해줘야 한다.
 
+> -
+
 ### OOP의 4가지 특징
 
 1. 추상화
@@ -44,6 +46,8 @@ comments: 'True'
     - 여러 개체들이 가진 공통된 특성을 부각시켜 하나의 개념이나 법칙으로 성립시키는 과정
 4. 다형성
     - 서로 다른 클래스의 객체가 같은 메시지를 받았을 때 각자의 방식으로 동작하는 능력
+
+> - [https://gmlwjd9405.github.io/2018/07/05/oop-features.html](https://gmlwjd9405.github.io/2018/07/05/oop-features.html)
 
 ### OOP의 5대 원칙 (SOLID)
 
@@ -58,6 +62,8 @@ comments: 'True'
 - **D**: 인터페이스 분리 원칙(ISP, Interface Segregation Principle)
   - 인터페이스를 클라이언트에 특화되도록 분리시키라는 설계 원칙이다.
 
+> - [https://gmlwjd9405.github.io/2018/07/05/oop-solid.html](https://gmlwjd9405.github.io/2018/07/05/oop-solid.html)
+
 ### 객체지향 프로그래밍과 절차지향 프로그래밍의 차이점
 
 - 절차지향 프로그래밍
@@ -69,6 +75,8 @@ comments: 'True'
   - 객체 지향의 행심은 연관되어 있는 변수와 메서드를 하나의 그룹으로 묶어서 그룹핑하는 것이다.
   - 사람의 사고와 가장 비슷하게 프로그래밍을 하기 위해서 생성된 기법
   - 하나의 클래스를 바탕으로 서로 다른 상태를 가진 인스턴스를 만들면 서로 다른 행동을 하게 된다. 즉, 하나의 클래스가 여러 개의 인스턴스가 될 수 있다는 점이 객체 지향이 제공하는 가장 기본적인 재활용성이라고 할 수 있다.
+
+> -
 
 ### JVM의 구조
 
@@ -97,6 +105,8 @@ comments: 'True'
     - 객체가 사라져도 멤버는 사라지지 않는다.
     - 멤버는 프로그램이 종료될 때 사라진다.
   - 공유의 특성: **동일한 클래스의 모든 객체들에 의해 공유된다.**
+
+> - [https://gmlwjd9405.github.io/2018/08/04/java-static.html](https://gmlwjd9405.github.io/2018/08/04/java-static.html)
 
 ### String, StringBuilder, StringBuffer 차이점
 
