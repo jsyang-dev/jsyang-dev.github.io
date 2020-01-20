@@ -79,9 +79,39 @@ comments: 'True'
 
 ### JVM의 구조
 
-### Java Garbage Collection
+- JRE는 JVM과 Java API로 구성되어 있다.
+- 자바 바이트코드는 JRE 위에서 동작하며, JRE는 JVM과 Java API로 구성되어 있다.
+- 그 중 JVM은 자바 어플리케이션을 클래스 로더를 통해 읽어서 바이트코드를 해석하고 자바 API와 함께 실행하는 가장 중요한 역할을 담당하고 있다.
+- 자바의 코드가 수행되는 과정은 Java Source(.java 파일)가 javac에 의해 Java Byte Code(.class 파일)로 변경되고 JVM의 클래스 로더가 컴파일된 자바 바이트코드를 런타임 데이터 영역에 로드하고 실행 엔진이 자바 바이트 코드를 수행하는 과정으로 이루어진다.
+![java-jvm](/assets/post/basicknowledge/java-jvm.png)
+- 클래스 로더(Class Loader)
+  - 자바는 컴파일타임이 아니라 런타임에 클래스를 처음으로 참조할 때 해당 클래스를 로드하고 링크하는 특징이 있다. 이 동적 로드를 담당하는 부분이 JVM의 클래스 로더이다.
+- 런타임 데이터 영역(Runtime Data Areas)
+  - VM이라는 프로그램이 운영체제 위에서 실행되면서 할당받는 메모리 영역이다. 아래의 6가지 영역으로 나눌 수 있다.
+    - 스레드 별 하나씩 생성되는 영역
+      - PC Register: 스레드가 시작 될 때 생성, 현재 수행중인 JVM의 명령의 주소를 가진다.
+      - JVM Stack: 스레드 시작 시 생성, 스택 프레임을 저장하는 스택
+      - Native Method Stack: 자바 외의 언어로 작성된 네이티브 코드를 위한 스택
+    - 모든 스레드가 공유하는 영역
+      - Heap Area: 인스턴스 또는 객체를 저장하는 공간으로 가비지 컬렉션 대상
+      - Method Area: 메서드 영역은 모든 스레드가 공유하는 영역으로 JVM이 시작될 때 생성됨
+      - Java Garbage Collection: 각 클래스와 인터페이스의 상수뿐만 아니라, 메서드와 필드에 대한 모든 레퍼런스까지 담고 있는 테이블
+
+> - [https://jeong-pro.tistory.com/148](https://jeong-pro.tistory.com/148)
 
 ### Java Collection Framework
+
+![java-collection](/assets/post/basicknowledge/java-collection.png)
+![java-map](/assets/post/basicknowledge/java-map.png)
+
+- Set은 중복을 허용하지 않음, List는 중복 가능
+- HashSet은 입력 순서 보장하지 않음, LinkedHashSet은 입력 순서 보장
+- Vector는 동기화 지원, ArrayList는 지원하지 않음
+- HashMap은 내부 hashing된 값에 따라 키 순서가 정해지므로 key는 특정 순서 없이 나옴
+- TreeMap은 내부적으로 RedBlack Tree로 저장됨, 키값에 대한 Compartor 구현으로 정렬 순서를 바꿀수 있음, 정렬된 순서로 key 값이 나옴
+- LinkedHashMap은 내부적으로 LinkedList, 입력 순서대로 key 값이 나옴
+
+> -
 
 ### java의 non-static 멤버와 static 멤버의 차이
 
@@ -109,20 +139,60 @@ comments: 'True'
 
 ### String, StringBuilder, StringBuffer 차이점
 
+- String
+  - String 클래스는 Immutable 객체이기 때문에 + 등 concat 연산 시 원본을 변경하지 않고 새로운 String 인스턴스를 생성해야 하는 단점이 존재한다. 하지만 JDK 1.5 이후부터는 컴파일 타임에 StringBuilder로 변경한다고 한다.
+- StringBuilder
+  - String에서 + 등으로 문자열 등을 concat하는 연산이 많은 경우 사용하는것이 좋다. 기존 String 문자들을 concat하는 경우 매번 새로운 String 인스턴스를 사용하기 때문에 성능상의 이슈 존재(JDK 1.5버전 부터는 내부적으로 StringBuilder를 이용하도록 변경되긴 했다.)
+- StringBuffer
+  - StringBuffer는 Builder와 비교해서 thread-safe하다. (멀티 스레드 환경에서 동기화의 지원 여부가 다름.) 내부적으로 append 등 모든 메소드에 대해 synchronized 키워드가 붙어있다.
+
+> -
+
 ### Comparable, Comparator 차이점
+
+- 정렬을 위해서 사용하는 인터페이스
+- Comparable: 정렬 기준을 설정할 클래스가 직접 상속해 compareTo 메소드를 오버라이딩 해야 함
+- Comparator: 직접 구현해서 Arrays.sort 같은 정렬 메소드에 인자로 넘겨 정렬 기준을 직접 설정해 줄 수 있음 (기본 Arrays.sort는 오름차순이지만, 위처럼 Comparator를 구현해서 파라미터로 넘겨주면 내림차순으로 정렬이 가능)
+
+> -
 
 ### LinkedList와 ArrayList의 차이점
 
+- LinkedList: 삽입, 삭제가 자주 일어나는 경우 유리한 구조
+- ArrayList: 검색에 유리한 구조, 내부적으로 데이터를 배열에서 관리하며 데이터의 추가, 삭제를 위해 임시 배열을 생성해 데이터를 복사 하는 방법을 사용 하고 있기 때문에 삽입 삭제시 많은 복사가 일어남
+
+> -
+
 ### Override, Overload 차이점
+
+- Overloading
+  - 두 메서드가 같은 이름을 갖고 있으나 인자의 수나 자료형이 다른 경우
+- 두 메서드가 같은 이름을 갖고 있으나 인자의 수나 자료형이 다른 경우
+  - 상위 클래스의 메서드와 이름과 용례(signature)가 같은 함수를 하위 클래스에 재정의하는 것
+  - 상속 관계에 있는 클래스 간에 같은 이름의 메서드를 정의
+
+> - [https://gmlwjd9405.github.io/2018/08/09/java-overloading-vs-overriding.html](https://gmlwjd9405.github.io/2018/08/09/java-overloading-vs-overriding.html)
 
 ### Abstract Class, Interface 차이점
 
+> -
+
 ### Java의 접근 제어자
+
+> -
 
 ### JPA 란
 
+> -
+
 ### 테스트 코드 작성 이유
+
+> -
 
 ### 객체의 동일성, 동등성 차이점
 
+> -
+
 ### 프로세스와 스레드의 차이
+
+> -
