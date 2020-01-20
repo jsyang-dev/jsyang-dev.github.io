@@ -3,9 +3,9 @@ title: 디자인 패턴 - Singleton
 layout: post
 subtitle: 인스턴스를 한 개만 만들기
 tags:
-- Java
-- DesignPattern
-- Study
+- java
+- designpattern
+- study
 author: Jeongsu Yang
 comments: 'True'
 ---

@@ -3,9 +3,9 @@ title: 디자인 패턴 - Adapter
 layout: post
 subtitle: 바꿔서 재이용하기
 tags:
-- Java
-- DesignPattern
-- Study
+- java
+- designpattern
+- study
 author: Jeongsu Yang
 comments: 'True'
 ---

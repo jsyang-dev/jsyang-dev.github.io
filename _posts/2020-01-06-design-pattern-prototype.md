@@ -3,9 +3,9 @@ title: 디자인 패턴 - Prototype
 layout: post
 subtitle: 복사해서 인스턴스 만들기
 tags:
-- Java
-- DesignPattern
-- Study
+- java
+- designpattern
+- study
 author: Jeongsu Yang
 comments: 'True'
 ---

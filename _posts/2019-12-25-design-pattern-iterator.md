@@ -3,9 +3,9 @@ title: 디자인 패턴 - Iterator
 layout: post
 subtitle: 순서대로 지정해서 처리하기
 tags:
-- Java
-- DesignPattern
-- Study
+- java
+- designpattern
+- study
 author: Jeongsu Yang
 comments: 'True'
 ---

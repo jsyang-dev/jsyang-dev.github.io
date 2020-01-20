@@ -3,9 +3,9 @@ title: 디자인 패턴 - Template Method
 layout: post
 subtitle: 하위 클래스에서 구체적으로 처리하기
 tags:
-- Java
-- DesignPattern
-- Study
+- java
+- designpattern
+- study
 author: Jeongsu Yang
 comments: 'True'
 ---

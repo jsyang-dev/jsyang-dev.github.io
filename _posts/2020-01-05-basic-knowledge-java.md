@@ -3,13 +3,12 @@ title: 기본 지식 - Java
 layout: post
 subtitle: 개발자가 알아야 할 지식
 tags:
-- BasicKnowledge
-- Study
+- basicknowledge
+- study
+- java
 author: Jeongsu Yang
 comments: 'True'
 ---
-
-## Java
 
 ### Java 언어의 장단점
 
