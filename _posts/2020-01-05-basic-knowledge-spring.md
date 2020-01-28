@@ -10,8 +10,6 @@ author: Jeongsu Yang
 comments: 'True'
 ---
 
-## Spring
-
 ### Spring 이란
 
 - 스프링의 정의
@@ -37,12 +35,12 @@ comments: 'True'
 
 ### Spring 생명주기
 
-> - 
+> -
 
 ### Spring 모듈
 
-> - 
+> -
 
-### MyBatis의 PrepareStatment(#)와 Statment($)의 차이
+### MyBatis PrepareStatment(#), Statment($)의 차이
 
-> - 
+> -
