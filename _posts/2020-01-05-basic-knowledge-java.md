@@ -101,7 +101,28 @@ comments: 'True'
 
 ### Java Garbage Collection
 
-> -
+- 더이상 필요하지 않은 객체인 가비지(정리되지 않은 메모리, 유효하지 않은 메모리 주소)를 효과적으로 처리하는 과정
+- Heap 메모리에 대해서 수행
+- Stop-the-world: GC를 실행하는 스레드를 제외한 나머지 스레드는 모두 작업을 멈춘다.
+- GC 작동의 전제 조건
+  - 대부분의 객체는 금방 접근 불가능 상태가 된다.
+  - 오래된 객체에서 젊은 객체로의 참조는 아주 적게 존재한다.
+- 영역 구성
+  - **Young 영역**: 새롭게 생성한 객체의 대부분이 여기에 위치한다. Minor GC
+  - **Eden 영역**: 새로 생성한 객체 -> 가득차면 살아남은 객체는 Survivor 영역으로 이동
+  - **Survivor 영역**(2개)
+    - Eden 영역에서 GC가 한 번 발생한 후 살아남은 객체
+    - 하나의 Survivor 영역이 가득 차면 그 중에서 살아남은 객체를 다른 Survivor 영역으로 이동
+    - 가득 찬 Survivor 영역은 아무 데이터도 없는 상태로 된다.
+    - 이 과정을 반복하다가 계속해서 살아남은 객체는 Old 영역으로 이동(Young 영역에 공간이 남지 않으면)
+  - **Old 영역**: 접근 불가능 상태로 되지 않아 Young 영역에서 살아남은 객체가 여기로 복사된다. Major GC
+    - Serial GC
+    - Parallel GC
+    - Parallel Old GC(Parallel Compacting GC)
+    - Concurrent Mark & Sweep GC(댄 CMS)
+    - G1(Garbage First) GC
+
+> - [https://d2.naver.com/helloworld/1329](https://d2.naver.com/helloworld/1329)
 
 ### Java Collection Framework
 
@@ -155,8 +176,8 @@ comments: 'True'
 ### Comparable, Comparator 차이점
 
 - 정렬을 위해서 사용하는 인터페이스
-- Comparable: 정렬 기준을 설정할 클래스가 직접 상속해 compareTo 메소드를 오버라이딩 해야 함
-- Comparator: 직접 구현해서 Arrays.sort 같은 정렬 메소드에 인자로 넘겨 정렬 기준을 직접 설정해 줄 수 있음 (기본 Arrays.sort는 오름차순이지만, 위처럼 Comparator를 구현해서 파라미터로 넘겨주면 내림차순으로 정렬이 가능)
+- **Comparable**: 정렬 기준을 설정할 클래스가 직접 상속해 compareTo 메소드를 오버라이딩 해야 함
+- **Comparator**: 직접 구현해서 Arrays.sort 같은 정렬 메소드에 인자로 넘겨 정렬 기준을 직접 설정해 줄 수 있음 (기본 Arrays.sort는 오름차순이지만, 위처럼 Comparator를 구현해서 파라미터로 넘겨주면 내림차순으로 정렬이 가능)
 
 > -
 
@@ -198,13 +219,34 @@ comments: 'True'
 
 ### JPA 란
 
-> -
+- ORM(Object-relational mapping)
+  - 객체는 객체대로 설계하고, 관계형 데이터베이스는 관계형 데이터베이스대로 설계한다.
+  - ORM 프레임워크가 중간에서 매핑해준다.
+- JPA(Java Persistence API)
+  - 현재 자바 진영의 ORM 기술 표준으로, 인터페이스의 모음이다.
+- Hibernate
+  - ORM 프레임워크
+  - JPA 인터페이스를 구현한 대표적인 오픈소스
+- JPA의 장점
+  - SQL 중심적인 개발에서 객체 중심으로 개발 가능
+  - 생산성 향상
+  - 유지보수: 필드 변경 시 객체의 필드만 변경하면 된다.
+  - Object와 RDB 간의 패러다임 불일치 해결
+  - 성능 최적화 기능: 모아서 쓰는 버퍼링 기능, 읽을 때 쓰는 캐싱 기능
+  - 데이터 접근 추상화와 벤더 독립성
 
-### 테스트 코드 작성 이유
-
-> -
+> - [https://gmlwjd9405.github.io/2019/08/04/what-is-jpa.html](https://gmlwjd9405.github.io/2019/08/04/what-is-jpa.html)
 
 ### 객체의 동일성, 동등성 차이점
+
+- 동일성(equality)
+  - 두개의 오프젝트가 완전히 동일한 것을 의미한다.
+  - 하나의 오브젝트만 존재하는것이며 그 오브젝트를 참조하는 여러개의 레퍼런스 변수를 갖고 있는 것을 의미한다.
+  - "=="로 주소값을 비교
+- 동등성(identity)
+  - 동일한 정보를 가지고 있는 오브젝트를 의미한다.
+  - 메모리상에 각기 다른 오브젝트가 존재하는 것이며 각 오브젝트의 기준에 따라 동등하다고 판단한다.
+  - equals() 에서 정의한 논리적인 비교
 
 > -
 
