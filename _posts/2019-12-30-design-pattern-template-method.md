@@ -5,7 +5,6 @@ subtitle: 하위 클래스에서 구체적으로 처리하기
 tags:
 - java
 - designpattern
-- study
 author: Jeongsu Yang
 comments: 'True'
 ---

@@ -5,7 +5,6 @@ subtitle: 복잡한 인스턴스 조립하기
 tags:
 - java
 - designpattern
-- study
 author: Jeongsu Yang
 comments: 'True'
 ---

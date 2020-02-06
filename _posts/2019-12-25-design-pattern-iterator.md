@@ -5,7 +5,6 @@ subtitle: 순서대로 지정해서 처리하기
 tags:
 - java
 - designpattern
-- study
 author: Jeongsu Yang
 comments: 'True'
 ---

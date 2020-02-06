@@ -5,7 +5,6 @@ subtitle: 관련 부품을 조합해서 제품 만들기
 tags:
 - java
 - designpattern
-- study
 author: Jeongsu Yang
 comments: 'True'
 ---

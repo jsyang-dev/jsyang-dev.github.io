@@ -5,7 +5,6 @@ subtitle: 하위 클래스에서 인스턴스 작성하기
 tags:
 - java
 - designpattern
-- study
 author: Jeongsu Yang
 comments: 'True'
 ---

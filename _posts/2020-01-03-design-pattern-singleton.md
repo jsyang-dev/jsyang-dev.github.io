@@ -5,7 +5,6 @@ subtitle: 인스턴스를 한 개만 만들기
 tags:
 - java
 - designpattern
-- study
 author: Jeongsu Yang
 comments: 'True'
 ---

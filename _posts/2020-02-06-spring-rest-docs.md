@@ -3,6 +3,7 @@ title: Spring REST Docs
 layout: post
 subtitle: 프로젝트에 Spring REST Docs 적용하기
 tags:
+- java
 - spring
 - restapi
 author: Jeongsu Yang

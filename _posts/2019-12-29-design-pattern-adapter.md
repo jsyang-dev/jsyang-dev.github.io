@@ -5,7 +5,6 @@ subtitle: 바꿔서 재이용하기
 tags:
 - java
 - designpattern
-- study
 author: Jeongsu Yang
 comments: 'True'
 ---

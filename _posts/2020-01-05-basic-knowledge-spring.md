@@ -4,7 +4,6 @@ layout: post
 subtitle: 개발자가 알아야 할 지식
 tags:
 - basicknowledge
-- study
 - spring
 author: Jeongsu Yang
 comments: 'True'
