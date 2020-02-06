@@ -138,7 +138,7 @@ public void When_단위_저장_Then_정상_리턴() throws Exception {
 
 ### index.adoc
 
-```asciidoc
+```
 = REST API Guide
 :doctype: book
 :icons: font
