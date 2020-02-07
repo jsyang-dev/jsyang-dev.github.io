@@ -77,62 +77,80 @@ public class RestDocsConfig {
 
 ### 샘플 테스트 코드
 
+- @AutoConfigureRestDocs 애노테이션을 추가해야 합니다.
+
 ```java
-@Test
-public void When_단위_저장_Then_정상_리턴() throws Exception {
+@RunWith(SpringRunner.class)
+@SpringBootTest
+@AutoConfigureMockMvc
+@AutoConfigureRestDocs
+@ActiveProfiles("test")
+@Import({RestDocsConfig.class, EmbeddedRedisConfig.class})
+@Ignore
+public class ControllerTest {
 
-    // Given
-    UnitRequest unitRequest = UnitRequest.builder()
-            .name("kg")
-            .exchangeUnitName("g")
-            .exchangeQuantity(1000D)
-            .build();
+        @Autowired
+        private MockMvc mockMvc;
 
-    // When
-    final ResultActions actions = this.mockMvc.perform(post("/units")
-            .param("userId", "1001")
-            .contentType(MediaType.APPLICATION_JSON)
-            .accept(MediaTypes.HAL_JSON)
-            .content(this.objectMapper.writeValueAsString(unitRequest)));
+        @Autowired
+        private ObjectMapper objectMapper;
 
-    // Then
-    actions.andDo(print())
-            .andExpect(status().isCreated())
-            .andExpect(header().string(HttpHeaders.CONTENT_TYPE, MediaTypes.HAL_JSON_UTF8_VALUE))
-            .andExpect(header().exists(HttpHeaders.LOCATION))
-            .andExpect(jsonPath("name").value(unitRequest.getName()))
-            .andExpect(jsonPath("exchangeUnitName").value(unitRequest.getExchangeUnitName()))
-            .andExpect(jsonPath("exchangeQuantity").value(unitRequest.getExchangeQuantity()))
-            .andExpect(jsonPath("_links.self").exists())
-            .andExpect(jsonPath("_links.units-read").exists())
-            .andExpect(jsonPath("_links.profile").exists())
-            .andDo(document("units-create",
-                    links(
-                            linkWithRel("self").description("현재 API"),
-                            linkWithRel("units-read").description("단위 조회 API"),
-                            linkWithRel("profile").description("프로파일 링크")
-                    ),
-                    requestHeaders(
-                            headerWithName(HttpHeaders.ACCEPT).description("Accept 헤더"),
-                            headerWithName(HttpHeaders.CONTENT_TYPE).description("Content type 헤더")
-                    ),
-                    requestFields(
-                            fieldWithPath("name").description("단위 이름"),
-                            fieldWithPath("exchangeUnitName").description("환산 단위"),
-                            fieldWithPath("exchangeQuantity").description("환산 단위의 수량")
-                    ),
-                    responseHeaders(
-                            headerWithName(HttpHeaders.CONTENT_TYPE).description("Content type 헤더")
-                    ),
-                    responseFields(
-                            fieldWithPath("name").description("단위 이름"),
-                            fieldWithPath("exchangeUnitName").description("환산 단위 이름"),
-                            fieldWithPath("exchangeQuantity").description("환산 단위 수량"),
-                            fieldWithPath("_links.self.href").description("현재 API"),
-                            fieldWithPath("_links.units-read.href").description("단위 조회 API"),
-                            fieldWithPath("_links.profile.href").description("프로파일 링크")
-                    )
-            ));
+        @Test
+        public void When_단위_저장_Then_정상_리턴() throws Exception {
+
+                // Given
+                UnitRequest unitRequest = UnitRequest.builder()
+                        .name("kg")
+                        .exchangeUnitName("g")
+                        .exchangeQuantity(1000D)
+                        .build();
+
+                // When
+                final ResultActions actions = this.mockMvc.perform(post("/units")
+                        .param("userId", "1001")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .accept(MediaTypes.HAL_JSON)
+                        .content(this.objectMapper.writeValueAsString(unitRequest)));
+
+                // Then
+                actions.andDo(print())
+                        .andExpect(status().isCreated())
+                        .andExpect(header().string(HttpHeaders.CONTENT_TYPE, MediaTypes.HAL_JSON_UTF8_VALUE))
+                        .andExpect(header().exists(HttpHeaders.LOCATION))
+                        .andExpect(jsonPath("name").value(unitRequest.getName()))
+                        .andExpect(jsonPath("exchangeUnitName").value(unitRequest.getExchangeUnitName()))
+                        .andExpect(jsonPath("exchangeQuantity").value(unitRequest.getExchangeQuantity()))
+                        .andExpect(jsonPath("_links.self").exists())
+                        .andExpect(jsonPath("_links.units-read").exists())
+                        .andExpect(jsonPath("_links.profile").exists())
+                        .andDo(document("units-create",
+                                links(
+                                        linkWithRel("self").description("현재 API"),
+                                        linkWithRel("units-read").description("단위 조회 API"),
+                                        linkWithRel("profile").description("프로파일 링크")
+                                ),
+                                requestHeaders(
+                                        headerWithName(HttpHeaders.ACCEPT).description("Accept 헤더"),
+                                        headerWithName(HttpHeaders.CONTENT_TYPE).description("Content type 헤더")
+                                ),
+                                requestFields(
+                                        fieldWithPath("name").description("단위 이름"),
+                                        fieldWithPath("exchangeUnitName").description("환산 단위"),
+                                        fieldWithPath("exchangeQuantity").description("환산 단위의 수량")
+                                ),
+                                responseHeaders(
+                                        headerWithName(HttpHeaders.CONTENT_TYPE).description("Content type 헤더")
+                                ),
+                                responseFields(
+                                        fieldWithPath("name").description("단위 이름"),
+                                        fieldWithPath("exchangeUnitName").description("환산 단위 이름"),
+                                        fieldWithPath("exchangeQuantity").description("환산 단위 수량"),
+                                        fieldWithPath("_links.self.href").description("현재 API"),
+                                        fieldWithPath("_links.units-read.href").description("단위 조회 API"),
+                                        fieldWithPath("_links.profile.href").description("프로파일 링크")
+                                )
+                        ));
+        }
 }
 ```
 
