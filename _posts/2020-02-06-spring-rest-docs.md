@@ -50,13 +50,15 @@ public class RestDocsConfig {
 }
 ```
 
+**적용 전**
+
 ```json
-// 적용 전
 {"name":"kg","exchangeUnitName":"g","exchangeQuantity":1000.0,"_links":{"self":{"href":"http://localhost:8080/units/kg"},"units-read":{"href":"http://localhost:8080/units"},"profile":{"href":"/docs/index.html#resources-units-create"}}}
 ```
 
+**적용 후**
+
 ```json
-// 적용 후
 {
   "name" : "kg",
   "exchangeUnitName" : "g",
