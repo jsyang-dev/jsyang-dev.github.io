@@ -118,7 +118,7 @@ comments: 'True'
     - Serial GC
     - Parallel GC
     - Parallel Old GC(Parallel Compacting GC)
-    - Concurrent Mark & Sweep GC(댄 CMS)
+    - Concurrent Mark & Sweep GC(CMS GC)
     - G1(Garbage First) GC
 
 > - [https://d2.naver.com/helloworld/1329](https://d2.naver.com/helloworld/1329)
