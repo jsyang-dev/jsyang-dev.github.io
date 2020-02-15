@@ -29,7 +29,7 @@ comments: 'True'
 - POST: 새로운 자원을 생성
 - PUT: 존재하는 자원에 대한 변경
 - DELETE: 존재하는 자원에 대한 삭제
-- HEAD: 서버 헤더 정보 획득, GET과 비슷핟ㅏ Body를 반환하지 않음
+- HEAD: 서버 헤더 정보 획득, GET과 비슷하며 Body를 반환하지 않음
 - OPTIONS: 지원 가능한 메소드 확인
 
 > -
