@@ -31,7 +31,7 @@ comments: 'True'
   4. 필요한 이미지 build
   5. 서비스 의존성에 따라 서비스 실행
 
-```
+```bash
 $ docker-compose up -d
 Creating network "myrecipes-api_default" with the default driver
 Creating rabbitmq ... done
@@ -43,7 +43,7 @@ Creating redis    ... done
 
 - 서비스를 지웁니다. 컨테이너와 네트워크를 삭제하며, 옵션에 따라 볼륨도 지웁니다.
 
-```
+```bash
 $ docker-compose down
 Removing redis    ... done
 Removing mongo    ... done
@@ -55,7 +55,7 @@ Removing network myrecipes-api_default
 
 - 서비스를 시작합니다.
 
-```
+```bash
 $ docker-compose start
 Starting redis    ... done
 Starting rabbitmq ... done
@@ -66,7 +66,7 @@ Starting mongo    ... done
 
 - 서비스를 중지합니다.
 
-```
+```bash
 $ docker-compose stop
 Stopping redis    ... done
 Stopping mongo    ... done
@@ -77,7 +77,7 @@ Stopping rabbitmq ... done
 
 - 현재 환경에서 실행 중인 서비스를 보여줍니다.
 
-```
+```bash
 $ docker-compose ps
   Name                Command                       State                                                                           Ports                                                                
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -90,24 +90,23 @@ redis      docker-entrypoint.sh redis ...   Up (health: starting)   0.0.0.0:6379
 
 - 실행 중인 컨테이너에서 명령을 실행합니다.
 
-```
+```bash
 $ docker-compose exec rabbitmq rabbitmq-plugins enable rabbitmq_management
 ...
 ```
-
 
 #### logs
 
 - 서비스의 로그를 확인할 수 있습니다.
 
-```
+```bash
 $ docker-compose logs rabbitmq
 Attaching to rabbitmq
 rabbitmq    | 2020-02-06 06:47:54.001 [info] <0.8.0> Feature flags: list of feature flags found:
 ...
 ```
 
-##  API 프로젝트에 Docker Compose 적용하기
+## API 프로젝트에 Docker Compose 적용하기
 
 ### 적용하게 된 계기
 
@@ -122,7 +121,7 @@ rabbitmq    | 2020-02-06 06:47:54.001 [info] <0.8.0> Feature flags: list of feat
   - RabbitMQ는 콘솔 접근을 가능하게 하기 위해서 관리 플러그인이 활성화되어 있는 rabbitmq:3-management 이미지를 사용했습니다.
   - 콘솔 기본 사용자와 비밀번호 수정을 위해서 환경변수 설정을 하였습니다.
 
-```
+```yaml
 version: '3'
 
 services:
