@@ -9,7 +9,7 @@ author: Jeongsu Yang
 comments: 'True'
 ---
 
-## Docker Compose 개요
+## Kubernetes 개요
 
 ### Kubernetes 란
 
