@@ -9,7 +9,7 @@ author: Jeongsu Yang
 comments: 'True'
 ---
 
-## Factory Method 패턴
+## Prototype 패턴
 
 ### 정의
 
